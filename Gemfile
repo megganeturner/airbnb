@@ -40,6 +40,7 @@ group :development, :test do
   gem 'strftime'
   gem "simple_calendar", "~> 2.0"
   gem 'rails_12factor'
+  gem 'cloudinary'
 end
 
 group :development do
