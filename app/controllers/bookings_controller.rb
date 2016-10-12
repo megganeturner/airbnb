@@ -15,10 +15,23 @@ class BookingsController < ApplicationController
   def create
     home = Home.find params[:home_id]
     if home.present?
-      booking = home.bookings.create booking_params
-      @current_user.bookings << booking if booking.valid?
+      home.bookings.each do |bookings|
+        @ystart = bookings.start_date
+        @yend = bookings.end_date
+        xstart = params[:start_date]
+        xend = params[:end_date]
+
+        if (xstart..xend).overlaps?(ystart..yend) == true
+          render 'You can\'t do that'
+        else
+          new_booking = home.bookings.create booking_params
+          @current_user.bookings << new_booking if new_booking.valid?
+        end
+      end
+      # booking = home.bookings.create booking_params
+      # @current_user.bookings << booking if booking.valid?
     end
-    redirect_to booking
+    redirect_to root_path
   end
 
   def edit

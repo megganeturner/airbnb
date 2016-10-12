@@ -1,39 +1,39 @@
 <%= form_for @home do |f| %>
   <p>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :required => true %>
   </p>
   <p>
     <%= f.label :max_guests %>
-    <%= f.text_field :max_guests %>
+    <%= f.text_field :max_guests, :required => true %>
   </p>
   <p>
     <%= f.label :bathrooms %>
-    <%= f.text_field :bathrooms %>
+    <%= f.text_field :bathrooms, :required => true %>
   </p>
   <p>
     <%= f.label :check_in %>
-    <%= f.text_field :check_in %>
+    <%= f.text_field :check_in, :required => true %>
   </p>
   <p>
     <%= f.label :check_out %>
-    <%= f.text_field :check_out %>
+    <%= f.text_field :check_out, :required => true %>
   </p>
   <p>
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :required => true %>
   </p>
   <p>
     <%= f.label :image %>
-    <%= f.text_field :image %>
+    <%= f.text_field :image, :required => true %>
   </p>
   <p>
     <%= f.label :price %>
-    <%= f.text_field :price %>
+    <%= f.text_field :price, :required => true %>
   </p>
   <p>
     <%= f.label :city_id %>
-    <%= f.select :city_id, City.pluck(:name, :id), :include_blank => true, :prompt => 'Select City' %>
+    <%= f.select :city_id, City.pluck(:name, :id), :prompt => 'Select City', :required => true %>
   </p>
 
   <%= f.submit %>

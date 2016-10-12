@@ -19,28 +19,94 @@ a {
 body {
   margin: 0;
 }
+.homefeature {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0.6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.homecontainer {
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
 
+nav {
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #00EAFF;
+  background-color: rgba(245, 245, 245, 0.7);
+  z-index: 1;
+}
+.main-nav {
+  width: 40%;
+  justify-content: space-between;
+}
+.credentials {
+  width: 60%;
+  justify-content: flex-end;
+  text-align: right;
+}
 .container {
   width: 80vw;
   margin: 0 auto;
 }
+nav a {
+  padding: 10px;
+}
+
+
+
+h1, h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 100;
+}
 
 h1 {
-  font-family: 'Quicksand', sans-serif;
-  font-weight:
+  font-size: 5em;
 }
-.cities_display {
+h2 {
+  margin-top: 60px;
+}
+.landerbutton {
+  margin: 15px;
+  padding: 15px;
+  border: 2px solid #00EAFF;
+  border-radius: 30px;
+
+}
+.cities_display,
+.homes_display {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-around;
 
 }
-.city_thumb_wrapper {
+.city_thumb_wrapper,
+.home_thumb_wrapper {
   position: relative;
-  min-width: 320px;
-  margin: 3px;
+  width: 320px;
+  margin: 20px;
 }
-.city_thumb_wrapper p {
+.city_thumb_wrapper p,
+.home_thumb_wrapper p {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -54,4 +120,37 @@ h1 {
   width: 100%;
   border-radius: 1px;
   opacity: 0.8;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.home-index {
+  width: 100%;
+  height: 160px;
+  background-color: #F0F0F0;
+  border-bottom: 2px solid #B2B2B2;
+  border-radius: 6px;
+  margin: 25px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-overflow: ellipsis;
+}
+.price {
+  color: #00B0FF;
+}
+.home-index p {
+  width: 50%;
+}
+.name-price {
+  width: 15%;
+}
+.home-index-thumb {
+  width: 20%;
+  border-radius: 2px;
+
 }

@@ -2,11 +2,11 @@
   <p>
 
     <%= f.label :start_date %>
-    <%= f.date_select :start_date %>
+    <%= f.date_select :start_date, :required => true %>
   </p>
   <p>
     <%= f.label :end_date %>
-    <%= f.date_select :end_date %>
+    <%= f.date_select :end_date, :required => true %>
   </p>
 
   <%= f.submit %>

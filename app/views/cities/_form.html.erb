@@ -2,15 +2,15 @@
 
   <p>
     <%= f.label :name, "City" %>
-    <%= f.text_field :name, :placeholder => "London" %>
+    <%= f.text_field :name, :placeholder => "London", :required => true %>
   </p>
   <p>
     <%= f.label :country %>
-    <%= f.text_field :country, :placeholder => "England" %>
+    <%= f.text_field :country, :placeholder => "England", :required => true %>
   </p>
   <p>
     <%= f.label :image %>
-    <%= f.text_field :image %>
+    <%= f.text_field :image, :required => true %>
   </p>
 
   <%= f.submit %>

@@ -1,9 +1,30 @@
-<h1>All Homes</h1>
+<h2>All Homes</h2>
 <ul>
   <% @homes.each do |home| %>
-    <li>
-      <%= link_to home.name, home_path(home.id) %>
-    </li>
+    <%= link_to(home_path(home.id)) do %>
+      <li class="home-index">
+        <div class="name-price">
+          <h3><%= home.name %><h3>
+          <span class="city-label">
+            <%= home.city.name %>
+          </span>
+          <br>
+          <span class="price">
+            $<%= home.price %>
+          </span>
+        </div>
+        <p>
+          Max Guests: <%= home.max_guests %>
+          <br>
+          Bathrooms: <%= home.bathrooms %>
+          <br><br>
+          <%= home.description %>
+        </p>
+        <%= image_tag home.image, :class => 'home-index-thumb' %>
+
+
+      </li>
+    <% end %>
   <% end %>
 </ul>
 

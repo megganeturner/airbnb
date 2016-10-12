@@ -1,7 +1,17 @@
-<h1><%= @city.name %></h1>
+<h2><%= @city.name %></h2>
 <h3><%= @city.country %> </h3>
-<%= image_tag @city.image %>
 
+
+<div class="homes_display">
+  <% @city.homes.each do |home| %>
+    <%= link_to(home_path(home.id)) do %>
+      <div class="home_thumb_wrapper">
+        <%= image_tag home.image, :class => 'thumb' %>
+        <p><%= home.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 <div class="controllers">
   <%= link_to 'Edit City', edit_city_path %>
