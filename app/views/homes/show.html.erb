@@ -11,13 +11,6 @@ Price: <%= @home.price %>
 <%= image_tag @home.image %>
 
 
-
-<%= month_calendar do |date| %>
-  <%= date %>
-<% end %>
-
-
-
 <div class="controllers">
   <% if @current_user.present? == false %>
     <%= link_to 'Login to Book this Home', login_path %>
