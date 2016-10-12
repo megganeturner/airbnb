@@ -1,0 +1,57 @@
+@import 'https://fonts.googleapis.com/css?family=Lato|Quicksand:300,400,700';
+
+html {
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  color: #6E6E6E;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #3D3D3D;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight:
+}
+.cities_display {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.city_thumb_wrapper {
+  position: relative;
+  min-width: 320px;
+  margin: 3px;
+}
+.city_thumb_wrapper p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%) translateY(-50%);
+  margin: 0;
+  font-size: 4em;
+  color: #F5F5F5;
+}
+.thumb {
+  width: 100%;
+  border-radius: 1px;
+  opacity: 0.8;
+}

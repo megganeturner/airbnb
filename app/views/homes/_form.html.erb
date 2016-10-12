@@ -1,0 +1,40 @@
+<%= form_for @home do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :max_guests %>
+    <%= f.text_field :max_guests %>
+  </p>
+  <p>
+    <%= f.label :bathrooms %>
+    <%= f.text_field :bathrooms %>
+  </p>
+  <p>
+    <%= f.label :check_in %>
+    <%= f.text_field :check_in %>
+  </p>
+  <p>
+    <%= f.label :check_out %>
+    <%= f.text_field :check_out %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </p>
+  <p>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :city_id %>
+    <%= f.select :city_id, City.pluck(:name, :id), :include_blank => true, :prompt => 'Select City' %>
+  </p>
+
+  <%= f.submit %>
+<% end %>

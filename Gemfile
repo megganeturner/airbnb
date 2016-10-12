@@ -37,6 +37,8 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'annotate'
+  gem 'strftime'
+  gem "simple_calendar", "~> 2.0"
 end
 
 group :development do

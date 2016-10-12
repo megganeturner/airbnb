@@ -1,28 +1,20 @@
 Rails.application.routes.draw do
-  get 'homes/index'
-
-  get 'homes/new'
-
-  get 'homes/edit'
-
-  get 'homes/destroy'
-
-  get 'cities/index'
-
-  get 'cities/new'
-
-  get 'cities/edit'
-
-  get 'cities/destroy'
-
-  get 'bookings/index'
-
-  get 'bookings/destroy'
-
-  get 'bookings/edit'
-
-  get 'bookings/new'
 
   root :to => 'pages#index'
-  resources :users
+
+  resources :users, :cities, :bookings
+
+
+
+  # get 'homes/:id/book' => 'bookings#new', :as => 'new_booking'
+  # post 'homes/:id/book' => 'bookings#create'
+
+  resources :homes do
+    resources :bookings, :only => [:new, :create]
+  end
+
+
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
 end

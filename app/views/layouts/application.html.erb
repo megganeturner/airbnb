@@ -7,8 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <%= link_to 'Home', root_path %>
+    <% if @current_user.present? %>
+      <%= link_to "Logout #{@current_user.first_name}", login_path, :method => 'delete' %>
+      <%= link_to "View Bookings", bookings_path %>
+    <% else %>
+      <%= link_to 'Sign Up', new_user_path %>
+      <%= link_to 'Sign In', login_path %>
+    <% end %>
 
-<%= yield %>
+    <%= link_to 'Explore Cities', cities_path %>
+    <%= link_to 'Explore Homes', homes_path %>
+  </nav>
+<div class="container">
+    <%= yield %>
+</div>
+
 
 </body>
 </html>

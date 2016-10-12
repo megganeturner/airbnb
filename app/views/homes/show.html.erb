@@ -1,0 +1,30 @@
+<h1><%= @home.name %></h1>
+
+
+Max guests: <%= @home.max_guests %>
+Bathrooms: <%= @home.bathrooms %>
+Check In: <%= @home.check_in %>
+Check Out: <%= @home.check_out %>
+Description <%= @home.description %>
+Price: <%= @home.price %>
+
+<%= image_tag @home.image %>
+
+
+
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>
+
+
+
+<div class="controllers">
+  <% if @current_user.present? == false %>
+    <%= link_to 'Login to Book this Home', login_path %>
+  <% elsif @current_user.id == @home.user_id %>
+    <%= link_to 'Edit home', edit_home_path %>
+    <%= link_to 'Delete home', @home, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  <% else %>
+    <%= link_to 'Book this home', "/homes/#{@home.id}/bookings/new" %>
+  <% end %>
+</div>

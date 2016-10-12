@@ -1,2 +1,24 @@
-<h1>Cities#index</h1>
-<p>Find me in app/views/cities/index.html.erb</p>
+<h1>Home, wherever you are</h1>
+
+<%= link_to 'Can\'t find your city on the list? Add it here', new_city_path %>
+
+
+<div class="cities_display">
+  <% @cities.each do |city| %>
+    <%= link_to(city_path(city.id)) do %>
+      <div class="city_thumb_wrapper">
+        <%= image_tag city.image, :class => 'thumb' %>
+        <p><%= city.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+<!-- <ul>
+  <% @cities.each do |city| %>
+    <li>
+      <%= link_to city.name, city_path(city.id) %>
+    </li>
+  <% end %>
+</ul> -->

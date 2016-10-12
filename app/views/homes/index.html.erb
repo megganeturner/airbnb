@@ -1,2 +1,10 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
+<h1>All Homes</h1>
+<ul>
+  <% @homes.each do |home| %>
+    <li>
+      <%= link_to home.name, home_path(home.id) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add your home', new_home_path %>
