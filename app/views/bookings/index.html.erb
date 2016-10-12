@@ -4,7 +4,8 @@
 <ul>
   <% @bookings.each do |booking| %>
     <li>
-      <%= link_to booking.start_date, booking_path(booking.id) %></li>
+      <%= booking.start_date.strftime('%A %e %B, %Y') %> - <%= booking.end_date.strftime('%A %e %B, %Y') %>: <%= booking.home.name %>
+      <%= link_to 'View Details', booking_path(booking.id) %>
   <% end %>
 </ul>
 
