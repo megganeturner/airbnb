@@ -1,5 +1,6 @@
 <div class="container">
   <h2>All Homes</h2>
+    <%= link_to 'Add your home', new_home_path, :class => 'addhome' %>
   <ul>
     <% @homes.each do |home| %>
       <%= link_to(home_path(home.id)) do %>
@@ -28,6 +29,4 @@
       <% end %>
     <% end %>
   </ul>
-
-  <%= link_to 'Add your home', new_home_path %>
 </div>

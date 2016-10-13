@@ -1,12 +1,21 @@
 <div class="container">
+  <h2>Your Bookings</h2>
   <ul>
     <% @bookings.each do |booking| %>
-      <li>
-        <% if booking.user_id == @current_user.id %>
-          <%= booking.start_date.strftime('%A %e %B, %Y') %> - <%= booking.end_date.strftime('%A %e %B, %Y') %>: <%= booking.home.name %>
-          <%= link_to 'View Details', booking_path(booking.id) %>
+      <% if booking.user_id == @current_user.id %>
+        <%= link_to(booking_path(booking.id)) do %>
+          <li class="bookings-index">
+            <div class="booking-name">
+              <h3><%= booking.home.name %></h3>
+              <span class="city-label"><%= booking.home.city.name %></span>
+            </div>
+            <div class="booking-details">
+              <%= booking.start_date.strftime('%A %e %B, %Y') %> - <%= booking.end_date.strftime('%A %e %B, %Y') %>
+            </div>
+            <%= image_tag booking.home.image, :class => 'booking-index-thumb' %>
+          </li>
         <% end %>
-      </li>
+      <% end %>
     <% end %>
   </ul>
-</div><h2>Your Bookings</h2>
+</div>

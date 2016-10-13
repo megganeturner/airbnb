@@ -4,12 +4,15 @@
 </div>
 
 <div class="home-show-container">
-  Max guests: <%= @home.max_guests %><br>
-  Bathrooms: <%= @home.bathrooms %><br>
-  Check In: <%= @home.check_in.strftime('%l %M %p') %><br>
-  Check Out: <%= @home.check_out.strftime('%l %M %p') %><br>
-  Description <%= @home.description %><br>
-  Price: <%= @home.price %><br>
+  <h3><%= @home.city.name %></h3>
+  <p>
+    <strong>Max guests:</strong> <%= @home.max_guests %><br>
+    <strong>Bathrooms:</strong> <%= @home.bathrooms %><br>
+    <strong>Check In:</strong> <%= @home.check_in.strftime('%l %M %p') %><br>
+    <strong>Check Out:</strong> <%= @home.check_out.strftime('%l %M %p') %><br>
+    <%= @home.description %><br>
+    <span class="price"><strong>Price:</strong> <%= @home.price %></span><br>
+  </p>
 
 
 
