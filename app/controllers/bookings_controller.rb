@@ -13,25 +13,38 @@ class BookingsController < ApplicationController
   end
 
   def create
-    home = Home.find params[:home_id]
-    if home.present?
-      home.bookings.each do |bookings|
-        @ystart = bookings.start_date
-        @yend = bookings.end_date
-        xstart = params[:start_date]
-        xend = params[:end_date]
-
-        if (xstart..xend).overlaps?(ystart..yend) == true
-          render 'You can\'t do that'
-        else
-          new_booking = home.bookings.create booking_params
-          @current_user.bookings << new_booking if new_booking.valid?
+    @home = Home.find params[:home_id]
+    if @home.present?
+      start_year = params[:booking]['start_date(1i)'].to_i
+      start_month = params[:booking]['start_date(2i)'].to_i
+      start_day = params[:booking]['start_date(3i)'].to_i
+      end_year = params[:booking]['end_date(1i)'].to_i
+      end_month = params[:booking]['end_date(2i)'].to_i
+      end_day = params[:booking]['end_date(3i)'].to_i
+      start_date = DateTime.new(start_year, start_month, start_day)
+      end_date = DateTime.new(end_year, end_month, end_day)
+      bookable = true
+      if @home.bookings.any?
+        @home.bookings.each do |booking|
+          if (start_date..end_date).overlaps?(booking.start_date..booking.end_date)
+            flash[:error] = "Not available."
+            bookable = false
+            puts "unbookable start: #{start_date}, end: #{end_date}. existing start: #{booking.start_date}, existing end: #{booking.end_date}"
+          end
         end
       end
-      # booking = home.bookings.create booking_params
-      # @current_user.bookings << booking if booking.valid?
+      if bookable
+        puts "is bookable"
+        new_booking = @home.bookings.new(booking_params)
+        @current_user.bookings << new_booking if new_booking.valid?
+        new_booking.save
+        redirect_to home_path(@home)
+      else
+        puts "is not bookable"
+        @booking = Booking.new
+        render :new
+      end
     end
-    redirect_to root_path
   end
 
   def edit

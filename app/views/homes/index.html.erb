@@ -1,31 +1,33 @@
-<h2>All Homes</h2>
-<ul>
-  <% @homes.each do |home| %>
-    <%= link_to(home_path(home.id)) do %>
-      <li class="home-index">
-        <div class="name-price">
-          <h3><%= home.name %><h3>
-          <span class="city-label">
-            <%= home.city.name %>
-          </span>
-          <br>
-          <span class="price">
-            $<%= home.price %>
-          </span>
-        </div>
-        <p>
-          Max Guests: <%= home.max_guests %>
-          <br>
-          Bathrooms: <%= home.bathrooms %>
-          <br><br>
-          <%= home.description %>
-        </p>
-        <%= image_tag home.image, :class => 'home-index-thumb' %>
+<div class="container">
+  <h2>All Homes</h2>
+  <ul>
+    <% @homes.each do |home| %>
+      <%= link_to(home_path(home.id)) do %>
+        <li class="home-index">
+          <div class="name-price">
+            <h3><%= home.name %><h3>
+            <span class="city-label">
+              <%= home.city.name %>
+            </span>
+            <br>
+            <span class="price">
+              $<%= home.price %>
+            </span>
+          </div>
+          <p>
+            Max Guests: <%= home.max_guests %>
+            <br>
+            Bathrooms: <%= home.bathrooms %>
+            <br><br>
+            <%= home.description %>
+          </p>
+          <%= image_tag home.image, :class => 'home-index-thumb' %>
 
 
-      </li>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
 
-<%= link_to 'Add your home', new_home_path %>
+  <%= link_to 'Add your home', new_home_path %>
+</div>

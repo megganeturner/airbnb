@@ -1,23 +1,27 @@
-<h2><%= @home.name %></h2>
+<div class="home-header">
+  <%= image_tag @home.image, :class => 'feature' %>
+  <h2><%= @home.name %></h2>
+</div>
+
+<div class="home-show-container">
+  Max guests: <%= @home.max_guests %><br>
+  Bathrooms: <%= @home.bathrooms %><br>
+  Check In: <%= @home.check_in.strftime('%l %M %p') %><br>
+  Check Out: <%= @home.check_out.strftime('%l %M %p') %><br>
+  Description <%= @home.description %><br>
+  Price: <%= @home.price %><br>
 
 
-Max guests: <%= @home.max_guests %>
-Bathrooms: <%= @home.bathrooms %>
-Check In: <%= @home.check_in %>
-Check Out: <%= @home.check_out %>
-Description <%= @home.description %>
-Price: <%= @home.price %>
-
-<%= image_tag @home.image %>
 
 
-<div class="controllers">
-  <% if @current_user.present? == false %>
-    <%= link_to 'Login to Book this Home', login_path %>
-  <% elsif @current_user.id == @home.user_id %>
-    <%= link_to 'Edit home', edit_home_path %>
-    <%= link_to 'Delete home', @home, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
-  <% else %>
-    <%= link_to 'Book this home', "/homes/#{@home.id}/bookings/new" %>
-  <% end %>
+  <div class="controllers">
+    <% if @current_user.present? == false %>
+      <%= link_to 'Login to Book this Home', login_path %>
+    <% elsif @current_user.id == @home.user_id %>
+      <%= link_to 'Edit home', edit_home_path %>
+      <%= link_to 'Delete home', @home, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+    <% else %>
+      <%= link_to 'Book this home', "/homes/#{@home.id}/bookings/new" %>
+    <% end %>
+  </div>
 </div>

@@ -41,6 +41,7 @@ group :development, :test do
   gem "simple_calendar", "~> 2.0"
   gem 'rails_12factor'
   gem 'cloudinary'
+  gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 end
 
 group :development do

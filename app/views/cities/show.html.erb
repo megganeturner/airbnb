@@ -1,20 +1,22 @@
-<h2><%= @city.name %></h2>
-<h3><%= @city.country %> </h3>
+<div class="container">
+  <h2><%= @city.name %></h2>
+  <h3><%= @city.country %> </h3>
 
 
-<div class="homes_display">
-  <% @city.homes.each do |home| %>
-    <%= link_to(home_path(home.id)) do %>
-      <div class="home_thumb_wrapper">
-        <%= image_tag home.image, :class => 'thumb' %>
-        <p><%= home.name %></p>
-      </div>
+  <div class="homes_display">
+    <% @city.homes.each do |home| %>
+      <%= link_to(home_path(home.id)) do %>
+        <div class="home_thumb_wrapper">
+          <%= image_tag home.image, :class => 'thumb' %>
+          <p><%= home.name %></p>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
-<div class="controllers">
-  <%= link_to 'Edit City', edit_city_path %>
-  <%= link_to 'Delete City', @city, :method => 'delete', :data => {:confirm => 'Are you sure you want to delete this city?'} %>
+  <div class="controllers">
+    <%= link_to 'Edit City', edit_city_path %>
+    <%= link_to 'Delete City', @city, :method => 'delete', :data => {:confirm => 'Are you sure you want to delete this city?'} %>
 
+  </div>
 </div>

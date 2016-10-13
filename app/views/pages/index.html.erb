@@ -1,16 +1,18 @@
-<% content_for :header do %>
-  <%= stylesheet_link_tag 'homepage', media: 'all' %>
-<% end %>
+<div class="container">
+  <% content_for :header do %>
+    <%= stylesheet_link_tag 'homepage', media: 'all' %>
+  <% end %>
 
-<%= image_tag 'bg6.jpeg', :class => 'homefeature' %>
+  <%= image_tag 'bg6.jpeg', :class => 'homefeature' %>
 
-<div class="homecontainer">
-  <h1>Home, wherever you are</h1>
-
-
-  <%= link_to 'Explore Homes', homes_path, :class => 'landerbutton' %>
-  <%= link_to 'Explore Cities', cities_path, :class => 'landerbutton' %>
+  <div class="homecontainer">
+    <h1>Home, wherever you are</h1>
 
 
+    <%= link_to 'Explore Homes', homes_path, :class => 'landerbutton' %>
+    <%= link_to 'Explore Cities', cities_path, :class => 'landerbutton' %>
 
+
+
+  </div>
 </div>

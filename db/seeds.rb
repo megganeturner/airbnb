@@ -4,8 +4,7 @@ u2 = User.create :first_name => 'Katie', :last_name => 'Jones', :email => 'katie
 
 
 Booking.destroy_all
-b1 = Booking.create :start_date => '2016-12-01', :end_date => '2017-01-05'
-b2 = Booking.create :start_date => '2016-10-30', :end_date => '2016-11-12'
+
 
 City.destroy_all
 c1 = City.create :name => 'Sydney', :country => 'Australia', :image => 'https://lonelyplanetimages.imgix.net/mastheads/65830387.jpg?sharp=10&vib=20&w=1200'
@@ -16,7 +15,7 @@ c5 = City.create :name => 'New York City', :country => 'USA', :image => 'https:/
 c6 = City.create :name => 'Rio de Janeiro', :country => 'Brazil', :image => 'http://brazilianexperience.com/wp-content/uploads/2015/06/Rio-de-Janeiro-at-night.jpg'
 c7 = City.create :name => 'London', :country => 'England', :image => 'https://media.timeout.com/images/100644443/image.jpg'
 c8 = City.create :name => 'Zanzibar', :country => 'Tanzania', :image => 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Approaching_Zanzibar.jpg'
-c9 = City.create :name => 'Berlin', :country => 'Germany', :image => 'http://www.shauntmax30.com/data/out/5/959638-berlin-wallpaper-1939-17-kb.jpg'
+c9 = City.create :name => 'Berlin', :country => 'Germany', :image => 'http://law.depaul.edu/academics/study-abroad/berlin-germany/PublishingImages/Berlin-OberbaumBridge_1600.jpg'
 c10 = City.create :name => 'Kashmir', :country => 'India', :image => 'http://shineindiaholidays.com/wp-content/uploads/2016/08/Kashmir-gallery-2.jpg'
 
 Home.destroy_all
