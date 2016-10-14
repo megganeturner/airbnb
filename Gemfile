@@ -40,6 +40,7 @@ group :development, :test do
   gem 'strftime'
   gem 'rails_12factor'
   gem 'stripe'
+  gem "stripe_event"
 end
 
 group :development do
