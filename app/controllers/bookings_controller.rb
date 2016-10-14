@@ -38,7 +38,7 @@ class BookingsController < ApplicationController
         new_booking = @home.bookings.new(booking_params)
         @current_user.bookings << new_booking if new_booking.valid?
         new_booking.save
-        redirect_to home_path(@home)
+        redirect_to new_charge_path
       else
         puts "is not bookable"
         @booking = Booking.new

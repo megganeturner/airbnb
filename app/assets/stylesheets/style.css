@@ -218,11 +218,23 @@ input {
   height: 35px;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #fff;
-  margin: 20px;
+  border-bottom: 2px solid #fff;
+  margin-top: 15px;
 }
 label {
-  margin: 20px;
+  margin: 15px auto;
   text-align: center;
+  display: block;
 
+}
+
+.submit {
+  margin: 0 auto;
+}
+.submit select {
+  width: 100%;
+}
+
+.booking-form {
+  text-align: center;
 }

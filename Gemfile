@@ -38,10 +38,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'annotate'
   gem 'strftime'
-  gem "simple_calendar", "~> 2.0"
   gem 'rails_12factor'
-  gem 'cloudinary'
-  gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+  gem 'stripe'
 end
 
 group :development do

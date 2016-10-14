@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root :to => 'pages#index'
 
-  resources :users, :cities, :bookings
+  resources :users, :cities, :bookings, :charges
 
 
 

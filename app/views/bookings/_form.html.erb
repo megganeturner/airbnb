@@ -1,13 +1,13 @@
 <%= form_for [@home, @booking] do |f| %>
-  <p>
+  <p class="booking-form">
 
     <%= f.label :start_date %>
     <%= f.date_select :start_date, :class => 'datepicker' %>
   </p>
-  <p>
+  <p class="booking-form">
     <%= f.label :end_date %>
     <%= f.date_select :end_date, :required => true %>
   </p>
 
-  <%= f.submit %>
+  <%= f.submit%>
 <% end %>
